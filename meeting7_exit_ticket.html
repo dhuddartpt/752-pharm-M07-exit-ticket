@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meeting 7 Exit Ticket – Anticoagulants and Antiplatelets</title>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+  :root{
+    --bg:#f5f7fb;
+    --card:#ffffff;
+    --text:#1f2937;
+    --muted:#4b5563;
+    --border:#d1d5db;
+    --accent:#2563eb;
+    --green-bg:#e8f7ea;
+    --green-border:#2e7d32;
+    --yellow-bg:#fff7db;
+    --yellow-border:#b7791f;
+    --red-bg:#fdeaea;
+    --red-border:#b91c1c;
+    --shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.45;
+  }
+
+  .page{
+    max-width:960px;
+    margin:0 auto;
+    padding:24px 16px 48px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:24px;
+    margin-bottom:20px;
+  }
+
+  h1{
+    margin:0 0 8px;
+    font-size:1.9rem;
+  }
+
+  h2{
+    margin:0 0 14px;
+    font-size:1.25rem;
+  }
+
+  h3{
+    margin:0 0 10px;
+    font-size:1.05rem;
+  }
+
+  p, li{
+    font-size:1rem;
+  }
+
+  .subtle{
+    color:var(--muted);
+  }
+
+  .instructions{
+    margin:8px 0 0;
+    padding-left:20px;
+  }
+
+  .case-box{
+    background:#f9fafb;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:16px;
+  }
+
+  .question{
+    margin-bottom:22px;
+    padding-bottom:18px;
+    border-bottom:1px solid #e5e7eb;
+  }
+
+  .question:last-child{
+    margin-bottom:0;
+    padding-bottom:0;
+    border-bottom:none;
+  }
+
+  label.main-label{
+    display:block;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+
+  select, textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #9ca3af;
+    border-radius:10px;
+    font-size:1rem;
+    background:#fff;
+  }
+
+  textarea{
+    min-height:110px;
+    resize:vertical;
+  }
+
+  .option-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    margin-top:8px;
+  }
+
+  .choice{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:12px;
+    background:#fff;
+  }
+
+  .choice input{
+    margin-top:4px;
+    transform:scale(1.15);
+  }
+
+  .choice strong{
+    display:block;
+  }
+
+  .color-choice.green{
+    background:var(--green-bg);
+    border:2px solid var(--green-border);
+  }
+
+  .color-choice.yellow{
+    background:var(--yellow-bg);
+    border:2px solid var(--yellow-border);
+  }
+
+  .color-choice.red{
+    background:var(--red-bg);
+    border:2px solid var(--red-border);
+  }
+
+  .button-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:18px;
+  }
+
+  button{
+    appearance:none;
+    border:none;
+    border-radius:12px;
+    padding:12px 18px;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+  }
+
+  .primary{
+    background:var(--accent);
+    color:#fff;
+  }
+
+  .secondary{
+    background:#111827;
+    color:#fff;
+  }
+
+  .secondary:disabled,
+  .primary:disabled{
+    opacity:.55;
+    cursor:not-allowed;
+  }
+
+  .notice{
+    display:none;
+    margin-top:14px;
+    padding:12px 14px;
+    border-radius:10px;
+    border:1px solid #cbd5e1;
+    background:#eff6ff;
+  }
+
+  .feedback-box{
+    display:none;
+    margin-top:20px;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #cbd5e1;
+    background:#f8fafc;
+  }
+
+  .feedback-box h2{
+    margin-bottom:12px;
+  }
+
+  .feedback-box ul{
+    margin-top:6px;
+    padding-left:20px;
+  }
+
+  .aligned{
+    color:#166534;
+    font-weight:700;
+  }
+
+  .not-aligned{
+    color:#991b1b;
+    font-weight:700;
+  }
+
+  .summary-line{
+    margin:8px 0;
+  }
+
+  .stamp{
+    font-size:0.95rem;
+    color:var(--muted);
+  }
+
+  .submission-preview{
+    display:none;
+    background:#fff;
+    color:#111827;
+    border:2px solid #d1d5db;
+    border-radius:16px;
+    padding:24px;
+    width:850px;
+    max-width:100%;
+  }
+
+  .preview-header{
+    border-bottom:2px solid #e5e7eb;
+    padding-bottom:12px;
+    margin-bottom:16px;
+  }
+
+  .preview-section{
+    margin-bottom:20px;
+  }
+
+  .preview-section:last-child{
+    margin-bottom:0;
+  }
+
+  .preview-label{
+    font-weight:700;
+    margin-bottom:8px;
+  }
+
+  .pill{
+    display:inline-block;
+    padding:8px 12px;
+    border-radius:999px;
+    font-weight:700;
+    border:2px solid #333;
+  }
+
+  .pill.green{
+    background:var(--green-bg);
+    border-color:var(--green-border);
+  }
+
+  .pill.yellow{
+    background:var(--yellow-bg);
+    border-color:var(--yellow-border);
+  }
+
+  .pill.red{
+    background:var(--red-bg);
+    border-color:var(--red-border);
+  }
+
+  .mini-list{
+    margin:0;
+    padding-left:20px;
+  }
+
+  .locked{
+    margin-top:12px;
+    font-style:italic;
+    color:#374151;
+  }
+
+  .small{
+    font-size:.95rem;
+  }
+
+  @media (max-width:720px){
+    .card{
+      padding:18px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="card">
+    <h1>Meeting 7 Exit Ticket</h1>
+    <p class="subtle"><strong>Anticoagulants and Antiplatelets</strong> | Individual participation and understanding check</p>
+    <ol class="instructions">
+      <li>Complete each item using the same case.</li>
+      <li>Click <strong>Submit Exit Ticket</strong> to lock your responses and view feedback.</li>
+      <li>Then click <strong>Generate Submission Image</strong> and upload the downloaded image to Canvas.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Original Case Prompt</h2>
+    <div class="case-box" id="caseText">
+      <p><strong>Case:</strong> A patient taking <strong>rivaroxaban</strong> reports falling yesterday. A bruise is present and appears stable, but today the patient reports a <strong>new headache</strong> and is <strong>unsure whether their head struck the wall</strong>.</p>
+      <p><strong>Your task:</strong> Decide the PT session level, what should not proceed, and how urgently the concern should be communicated.</p>
+      <p class="small"><strong>Decision system:</strong> <span class="pill green">GREEN — Proceed / Monitor</span> <span class="pill yellow">YELLOW — Modify / Hold</span> <span class="pill red">RED — Stop / Escalate</span></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Submit Your Responses</h2>
+
+    <div class="question">
+      <label for="medicationCategory" class="main-label">1. Medication category</label>
+      <select id="medicationCategory" aria-label="Medication category">
+        <option value="">Select one</option>
+        <option value="anticoagulant">Anticoagulant</option>
+        <option value="antiplatelet">Antiplatelet</option>
+        <option value="not_sure">Not sure</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label class="main-label">2. PT session decision</label>
+      <div class="option-grid">
+        <label class="choice color-choice green">
+          <input type="radio" name="decisionColor" value="green">
+          <span><strong>GREEN — Proceed / Monitor</strong> Findings appear stable enough to continue with low concern.</span>
+        </label>
+        <label class="choice color-choice yellow">
+          <input type="radio" name="decisionColor" value="yellow">
+          <span><strong>YELLOW — Modify / Hold</strong> Risk is present and the plan should be changed while concern is investigated.</span>
+        </label>
+        <label class="choice color-choice red">
+          <input type="radio" name="decisionColor" value="red">
+          <span><strong>RED — Stop / Escalate</strong> Concerning pattern; stop the session and escalate through the appropriate medical pathway.</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label for="keyFinding" class="main-label">3. Which finding most changed the urgency?</label>
+      <select id="keyFinding" aria-label="Key finding">
+        <option value="">Select one</option>
+        <option value="bruise_only">The bruise appears stable</option>
+        <option value="fall_only">The patient fell yesterday</option>
+        <option value="possible_headstrike_headache">Possible head strike plus a new headache</option>
+        <option value="medication_only">The medication name alone</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label for="ptAction" class="main-label">4. Best PT action right now</label>
+      <select id="ptAction" aria-label="PT action">
+        <option value="">Select one</option>
+        <option value="proceed_normal">Proceed with the planned exercise session because the bruise is stable</option>
+        <option value="modify_and_walk">Modify intensity, but continue gait and balance testing</option>
+        <option value="stop_escalate">Stop the session, keep the patient safe, and initiate urgent medical assessment per site policy</option>
+        <option value="manual_therapy">Begin low-intensity manual therapy and reassess afterward</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label for="doNotProceed" class="main-label">5. What should not proceed?</label>
+      <select id="doNotProceed" aria-label="Do not proceed item">
+        <option value="">Select one</option>
+        <option value="seated_education">Brief education while seated</option>
+        <option value="vitals_observation">Low-risk vitals and observation</option>
+        <option value="gait_balance">Gait or balance progression while the head-strike concern is unresolved</option>
+        <option value="sbar_call">Preparing an SBAR communication</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label for="communicationLevel" class="main-label">6. Communication level</label>
+      <select id="communicationLevel" aria-label="Communication level">
+        <option value="">Select one</option>
+        <option value="routine">Routine documentation</option>
+        <option value="same_day">Same-day communication</option>
+        <option value="urgent">Urgent medical assessment</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label for="rationale" class="main-label">7. In 1–2 sentences, explain your reasoning.</label>
+      <textarea id="rationale" placeholder="Example: The new headache plus possible head strike while taking an anticoagulant makes this a high-consequence pattern, so the session should stop and be escalated."></textarea>
+    </div>
+
+    <div class="button-row">
+      <button class="primary" id="submitBtn" type="button">Submit Exit Ticket</button>
+      <button class="secondary" id="generateBtn" type="button" disabled>Generate Submission Image</button>
+    </div>
+
+    <div id="lockNotice" class="notice">
+      Your responses have been submitted and locked. Review the feedback below, then generate your submission image for Canvas.
+    </div>
+
+    <div id="feedbackBox" class="feedback-box" aria-live="polite"></div>
+  </div>
+
+  <div class="card">
+    <h2>Submission Image Preview</h2>
+    <p class="subtle">This preview will appear after you submit. The downloaded image will include the original case, your answers, the date/time stamp, and the <strong>Instructor Feedback</strong> section.</p>
+    <div id="submissionPreview" class="submission-preview"></div>
+  </div>
+</div>
+
+<script>
+  const expected = {
+    medicationCategory: "anticoagulant",
+    decisionColor: "red",
+    keyFinding: "possible_headstrike_headache",
+    ptAction: "stop_escalate",
+    doNotProceed: "gait_balance",
+    communicationLevel: "urgent"
+  };
+
+  const textMap = {
+    medicationCategory: {
+      anticoagulant: "Anticoagulant",
+      antiplatelet: "Antiplatelet",
+      not_sure: "Not sure"
+    },
+    decisionColor: {
+      green: "GREEN — Proceed / Monitor",
+      yellow: "YELLOW — Modify / Hold",
+      red: "RED — Stop / Escalate"
+    },
+    keyFinding: {
+      bruise_only: "The bruise appears stable",
+      fall_only: "The patient fell yesterday",
+      possible_headstrike_headache: "Possible head strike plus a new headache",
+      medication_only: "The medication name alone"
+    },
+    ptAction: {
+      proceed_normal: "Proceed with the planned exercise session because the bruise is stable",
+      modify_and_walk: "Modify intensity, but continue gait and balance testing",
+      stop_escalate: "Stop the session, keep the patient safe, and initiate urgent medical assessment per site policy",
+      manual_therapy: "Begin low-intensity manual therapy and reassess afterward"
+    },
+    doNotProceed: {
+      seated_education: "Brief education while seated",
+      vitals_observation: "Low-risk vitals and observation",
+      gait_balance: "Gait or balance progression while the head-strike concern is unresolved",
+      sbar_call: "Preparing an SBAR communication"
+    },
+    communicationLevel: {
+      routine: "Routine documentation",
+      same_day: "Same-day communication",
+      urgent: "Urgent medical assessment"
+    }
+  };
+
+  function getRadioValue(name){
+    const checked = document.querySelector(`input[name="${name}"]:checked`);
+    return checked ? checked.value : "";
+  }
+
+  function decisionPillClass(value){
+    if(value === "green") return "green";
+    if(value === "yellow") return "yellow";
+    return "red";
+  }
+
+  function validateForm(){
+    const med = document.getElementById("medicationCategory").value;
+    const decision = getRadioValue("decisionColor");
+    const key = document.getElementById("keyFinding").value;
+    const action = document.getElementById("ptAction").value;
+    const noProceed = document.getElementById("doNotProceed").value;
+    const comm = document.getElementById("communicationLevel").value;
+    const rationale = document.getElementById("rationale").value.trim();
+
+    if(!med || !decision || !key || !action || !noProceed || !comm || !rationale){
+      alert("Please complete all items before submitting.");
+      return false;
+    }
+    return true;
+  }
+
+  function lockForm(){
+    document.getElementById("medicationCategory").disabled = true;
+    document.getElementById("keyFinding").disabled = true;
+    document.getElementById("ptAction").disabled = true;
+    document.getElementById("doNotProceed").disabled = true;
+    document.getElementById("communicationLevel").disabled = true;
+    document.getElementById("rationale").disabled = true;
+    document.querySelectorAll('input[name="decisionColor"]').forEach(el => el.disabled = true);
+    document.getElementById("submitBtn").disabled = true;
+    document.getElementById("generateBtn").disabled = false;
+  }
+
+  function compareAnswer(field, value){
+    return value === expected[field];
+  }
+
+  function buildFeedback(data, timestamp){
+    const alignedCount =
+      Number(compareAnswer("medicationCategory", data.medicationCategory)) +
+      Number(compareAnswer("decisionColor", data.decisionColor)) +
+      Number(compareAnswer("keyFinding", data.keyFinding)) +
+      Number(compareAnswer("ptAction", data.ptAction)) +
+      Number(compareAnswer("doNotProceed", data.doNotProceed)) +
+      Number(compareAnswer("communicationLevel", data.communicationLevel));
+
+    const decisionAligned = compareAnswer("decisionColor", data.decisionColor);
+    const decisionLine = decisionAligned
+      ? `<span class="aligned">Your decision: ${textMap.decisionColor[data.decisionColor]} — aligned with expected reasoning.</span>`
+      : `<span class="not-aligned">Your decision: ${textMap.decisionColor[data.decisionColor]} — expected ${textMap.decisionColor[expected.decisionColor]} because the new headache after possible head strike changes the urgency.</span>`;
+
+    const feedbackBox = document.getElementById("feedbackBox");
+    feedbackBox.style.display = "block";
+    feedbackBox.innerHTML = `
+      <h2>Instructor Feedback</h2>
+      <p class="summary-line"><strong>Understanding Check:</strong> ${alignedCount} of 6 decision elements aligned.</p>
+      <p class="summary-line">${decisionLine}</p>
+      <ul>
+        <li><strong>Expected medication category:</strong> ${textMap.medicationCategory[expected.medicationCategory]}</li>
+        <li><strong>Expected PT session decision:</strong> ${textMap.decisionColor[expected.decisionColor]}</li>
+        <li><strong>Key finding that drives the urgency:</strong> ${textMap.keyFinding[expected.keyFinding]}</li>
+        <li><strong>Expected PT action:</strong> ${textMap.ptAction[expected.ptAction]}</li>
+        <li><strong>What should not proceed:</strong> ${textMap.doNotProceed[expected.doNotProceed]}</li>
+        <li><strong>Expected communication level:</strong> ${textMap.communicationLevel[expected.communicationLevel]}</li>
+      </ul>
+      <p><strong>Expected reasoning:</strong> RED — uncertain head strike plus a new headache while taking an anticoagulant creates a high-consequence pattern. Stop the session, avoid gait or balance progression, keep the patient safe, obtain low-risk observations only as appropriate, and initiate urgent medical assessment per site policy.</p>
+      <p class="stamp"><strong>Submitted:</strong> ${timestamp}</p>
+    `;
+
+    const preview = document.getElementById("submissionPreview");
+    preview.style.display = "block";
+    preview.innerHTML = `
+      <div class="preview-header">
+        <h2 style="margin:0 0 6px;">Meeting 7 Exit Ticket Submission</h2>
+        <div class="stamp">Submitted: ${timestamp}</div>
+        <div class="locked">Submitted responses are locked.</div>
+      </div>
+
+      <div class="preview-section">
+        <div class="preview-label">Original Case Prompt</div>
+        <div class="case-box">
+          <p><strong>Case:</strong> A patient taking <strong>rivaroxaban</strong> reports falling yesterday. A bruise is present and appears stable, but today the patient reports a <strong>new headache</strong> and is <strong>unsure whether their head struck the wall</strong>.</p>
+          <p><strong>Your task:</strong> Decide the PT session level, what should not proceed, and how urgently the concern should be communicated.</p>
+        </div>
+      </div>
+
+      <div class="preview-section">
+        <div class="preview-label">Your Submitted Answers</div>
+        <ul class="mini-list">
+          <li><strong>Medication category:</strong> ${textMap.medicationCategory[data.medicationCategory]}</li>
+          <li><strong>PT session decision:</strong> <span class="pill ${decisionPillClass(data.decisionColor)}">${textMap.decisionColor[data.decisionColor]}</span></li>
+          <li><strong>Finding that most changed urgency:</strong> ${textMap.keyFinding[data.keyFinding]}</li>
+          <li><strong>Best PT action:</strong> ${textMap.ptAction[data.ptAction]}</li>
+          <li><strong>What should not proceed:</strong> ${textMap.doNotProceed[data.doNotProceed]}</li>
+          <li><strong>Communication level:</strong> ${textMap.communicationLevel[data.communicationLevel]}</li>
+          <li><strong>Written rationale:</strong> ${escapeHtml(data.rationale)}</li>
+        </ul>
+      </div>
+
+      <div class="preview-section">
+        <div class="preview-label">Instructor Feedback</div>
+        <ul class="mini-list">
+          <li><strong>Understanding Check:</strong> ${alignedCount} of 6 decision elements aligned.</li>
+          <li>${decisionAligned ? "Your decision aligned with expected reasoning." : "Your decision did not align with expected reasoning."}</li>
+          <li><strong>Expected medication category:</strong> ${textMap.medicationCategory[expected.medicationCategory]}</li>
+          <li><strong>Expected PT session decision:</strong> ${textMap.decisionColor[expected.decisionColor]}</li>
+          <li><strong>Key finding that drives the urgency:</strong> ${textMap.keyFinding[expected.keyFinding]}</li>
+          <li><strong>Expected PT action:</strong> ${textMap.ptAction[expected.ptAction]}</li>
+          <li><strong>What should not proceed:</strong> ${textMap.doNotProceed[expected.doNotProceed]}</li>
+          <li><strong>Expected communication level:</strong> ${textMap.communicationLevel[expected.communicationLevel]}</li>
+        </ul>
+        <p><strong>Expected reasoning:</strong> RED — uncertain head strike plus a new headache while taking an anticoagulant creates a high-consequence pattern. Stop the session, avoid gait or balance progression, keep the patient safe, obtain low-risk observations only as appropriate, and initiate urgent medical assessment per site policy.</p>
+      </div>
+    `;
+
+    document.getElementById("lockNotice").style.display = "block";
+    preview.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function escapeHtml(str){
+    return str.replace(/[&<>"']/g, function(match){
+      const escapeMap = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      };
+      return escapeMap[match];
+    });
+  }
+
+  document.getElementById("submitBtn").addEventListener("click", function(){
+    if(!validateForm()) return;
+
+    const data = {
+      medicationCategory: document.getElementById("medicationCategory").value,
+      decisionColor: getRadioValue("decisionColor"),
+      keyFinding: document.getElementById("keyFinding").value,
+      ptAction: document.getElementById("ptAction").value,
+      doNotProceed: document.getElementById("doNotProceed").value,
+      communicationLevel: document.getElementById("communicationLevel").value,
+      rationale: document.getElementById("rationale").value.trim()
+    };
+
+    const timestamp = new Date().toLocaleString();
+
+    lockForm();
+    buildFeedback(data, timestamp);
+  });
+
+  document.getElementById("generateBtn").addEventListener("click", function(){
+    const target = document.getElementById("submissionPreview");
+    if(target.style.display === "none" || !target.innerHTML.trim()){
+      alert("Please submit the exit ticket before generating the image.");
+      return;
+    }
+
+    html2canvas(target, {
+      scale: 2,
+      backgroundColor: "#ffffff",
+      useCORS: true
+    }).then(canvas => {
+      const link = document.createElement("a");
+      link.download = "meeting7_exit_ticket_submission.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    }).catch(() => {
+      alert("The image could not be generated in this browser. Please try again in Chrome or Edge.");
+    });
+  });
+</script>
+</body>
+</html>
